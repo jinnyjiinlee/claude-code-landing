@@ -593,7 +593,7 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-[11px] text-white/40 sm:text-xs">
-                  실습 위주 강의라 오프라인을 추천합니다
+                  온라인 수강도 가능하지만, 실습 위주 강의라 오프라인을 적극 추천합니다
                 </p>
               </div>
               <div className="mt-5 sm:mt-6">
