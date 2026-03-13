@@ -61,7 +61,7 @@ export default function Home() {
             <span className="mb-4 inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-purple/30 bg-purple/10 px-3 py-1.5 text-xs text-light-blue sm:mb-6 sm:gap-2 sm:px-5 sm:py-2 sm:text-sm">
               비개발자를 위한 AI 자동화 강의
               <span className="hidden h-3.5 w-px bg-light-blue/25 sm:inline-block" />
-              <span className="text-[10px] text-light-blue/60 sm:text-xs">3/28(토) 성수 · 선착순 10명</span>
+              <span className="text-[10px] text-light-blue/60 sm:text-xs">3/21(토) 성수 · 선착순 10명</span>
             </span>
           </div>
 
@@ -659,7 +659,7 @@ export default function Home() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-gray-900 sm:text-base">
-                      2025년 3월 28일 (토)
+                      2025년 3월 21일 (토)
                     </p>
                     <p className="text-xs text-gray-400 sm:text-sm">
                       오후 1:00 ~ 5:00 (4시간)

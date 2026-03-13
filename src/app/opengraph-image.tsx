@@ -121,7 +121,7 @@ export default function Image() {
             textAlign: "center",
           }}
         >
-          4시간 오프라인 강의 | 3/28(토) 성수 | 선착순 10명
+          4시간 오프라인 강의 | 3/21(토) 성수 | 선착순 10명
         </span>
 
         {/* Bottom brand */}
