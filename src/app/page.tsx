@@ -239,16 +239,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Beyond the course */}
+      {/* Why Claude Code */}
       <section className="bg-gray-50 py-16 pt-24 sm:py-24 sm:pt-32 md:py-32 md:pt-40">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+            왜 <span className="text-purple">클로드코드</span>를 배워야 할까요?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-sm text-gray-400 sm:mt-5 sm:text-base">
+            ChatGPT와는 차원이 다릅니다
+          </p>
+
+          <div className="mt-10 grid gap-5 sm:mt-14 sm:grid-cols-3 sm:gap-6">
+            {[
+              {
+                icon: "💬",
+                title: "ChatGPT는 대화만",
+                desc: "답변을 복사해서 붙여넣기하는 게 전부입니다. 실제 업무를 대신 해주지 않습니다.",
+                highlight: false,
+              },
+              {
+                icon: "🖥️",
+                title: "클로드코드는 실행",
+                desc: "내 컴퓨터에서 직접 파일을 만들고, 정리하고, 디자인하고, PDF로 저장까지 해줍니다.",
+                highlight: true,
+              },
+              {
+                icon: "🚀",
+                title: "비개발자도 개발자처럼",
+                desc: "코딩을 몰라도 말로 명령하면 됩니다. 개발자가 하는 일을 사장님도 할 수 있습니다.",
+                highlight: false,
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className={`rounded-xl border p-6 text-center transition sm:rounded-2xl ${
+                  item.highlight
+                    ? "border-purple/30 bg-purple/5 shadow-lg shadow-purple/10"
+                    : "border-gray-200 bg-white"
+                }`}
+              >
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-purple/5 text-3xl">
+                  {item.icon}
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-purple/10 bg-purple/5 p-6 sm:mt-14 sm:p-8">
+            <p className="text-center text-base font-semibold leading-relaxed text-gray-800 sm:text-lg">
+              AI를 쓰는 사람과 안 쓰는 사람의 격차는
+              <br />
+              이미 벌어지고 있습니다.
+              <br />
+              <span className="text-purple">
+                지금 배우면 앞서가고, 안 배우면 뒤처집니다.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Beyond the course */}
+      <section className="bg-gray-50 pb-16 sm:pb-24 md:pb-32">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
           <span className="inline-block rounded-full bg-purple/10 px-4 py-1.5 text-xs font-medium text-purple sm:text-sm">
             강의 그 이후
           </span>
           <h2 className="mt-5 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-            왜 <span className="text-purple">클로드코드</span>인가?
+            한번 배우면
             <br />
-            확장성 때문입니다.
+            <span className="text-purple">확장성</span>이 무한합니다.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-500 sm:mt-6 sm:text-base">
             ChatGPT, 캔바로는 복붙이 끝입니다.
