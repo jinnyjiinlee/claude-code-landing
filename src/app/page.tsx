@@ -451,6 +451,16 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-white/50 sm:mt-14 sm:text-base">
+            이 강의의 목적은 포스터를 만들어주는 게 아닙니다.
+            <br />
+            <strong className="text-white/80">
+              물고기를 잡아주는 게 아니라, 잡는 법을 알려드립니다.
+            </strong>
+            <br />
+            클로드코드의 원리를 이해하면, 어떤 업무든 스스로 자동화할 수 있습니다.
+          </p>
         </div>
       </section>
 
