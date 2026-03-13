@@ -1,26 +1,314 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050A34;
+  --foreground: #ffffff;
+  --purple: #713FFF;
+  --bright-blue: #085CF0;
+  --light-blue: #AFE9FD;
+  --navy: #050A34;
+  --deep-navy: #092676;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-purple: var(--purple);
+  --color-bright-blue: var(--bright-blue);
+  --color-light-blue: var(--light-blue);
+  --color-navy: var(--navy);
+  --color-deep-navy: var(--deep-navy);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* 1. CTA 버튼 shimmer 효과 */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* 5. 가격 카드 gradient border 애니메이션 */
+@keyframes border-rotate {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fade-in-up 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fade-in-up 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-bounce-down {
+  animation: bounce-down 1.5s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--purple), var(--light-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 1. CTA 버튼 shimmer 글로우 */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.15) 60%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* 5. 가격 카드 animated gradient border */
+.pricing-glow {
+  position: relative;
+  border: none !important;
+}
+.pricing-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle), var(--purple), var(--bright-blue), var(--light-blue), var(--purple));
+  animation: border-rotate 4s linear infinite;
+  z-index: -1;
+}
+.pricing-glow::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: var(--navy);
+  z-index: -1;
+}
+
+/* 6. 커리큘럼 타임라인 */
+.timeline-card {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .timeline-line::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--purple), transparent);
+    transform: translateX(-50%);
+    opacity: 0.3;
+  }
+}
+
+/* 3. Pain Points accent border */
+.pain-card {
+  position: relative;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.pain-card:hover {
+  border-left-color: var(--purple);
+  background: #f8f5ff;
+  transform: translateX(4px);
+}
+
+/* 7. 강사 카드 gradient top bar */
+.instructor-card {
+  position: relative;
+  overflow: hidden;
+}
+.instructor-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple), var(--bright-blue), var(--light-blue));
+}
+
+/* 9. 확장성 카드 hover */
+.expand-card {
+  transition: all 0.3s ease;
+}
+.expand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(113, 63, 255, 0.15);
+  border-color: var(--purple) !important;
+}
+
+/* 8. Before/After 화살표 */
+.ba-arrow {
+  position: relative;
+}
+@media (min-width: 640px) {
+  .ba-arrow::after {
+    content: "→";
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translate(50%, -50%);
+    font-size: 1.25rem;
+    color: var(--purple);
+    z-index: 10;
+    background: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(113, 63, 255, 0.2);
+  }
+}
+
+.terminal-window {
+  background: #1e1e2e;
+  border: 1px solid rgba(113, 63, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: #181825;
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* 섹션 간 곡선 전환 */
+.curve-top {
+  position: relative;
+}
+.curve-top::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: inherit;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.curve-bottom {
+  position: relative;
+}
+.curve-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: inherit;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  z-index: 1;
+}
+
+/* 4. Social Proof 구분선 */
+.stat-divider {
+  position: relative;
+}
+.stat-divider:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+/* FAQ 개선 */
+details summary::-webkit-details-marker {
+  display: none;
 }
