@@ -1,4 +1,4 @@
-const KAKAO_LINK = "https://open.kakao.com/o/g3Mpjbli";
+const KAKAO_LINK = "https://open.kakao.com/o/sJEjmcli";
 const NAVER_MAP_LINK =
   "https://map.naver.com/v5/search/%ED%8C%A8%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%B4%EB%B8%8C%20%EC%84%B1%EC%88%982%ED%98%B8%EC%A0%90";
 
