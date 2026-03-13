@@ -22,6 +22,21 @@ export const metadata: Metadata = {
   title: "DAYFOCUS LAB | 클로드코드 강의 - 스터디카페 사장님을 위한 AI 자동화",
   description:
     "비개발자도 4시간이면 클로드코드로 스터디카페 실무를 자동화할 수 있습니다. 파일 정리, 디자인, PDF 출력까지.",
+  metadataBase: new URL("https://claude-code-landing-zzso.vercel.app"),
+  openGraph: {
+    title: "DAYFOCUS LAB | 클로드코드 강의",
+    description:
+      "스터디카페 사장님을 위한 AI 자동화 강의. 비개발자도 4시간이면 클로드코드로 업무를 자동화할 수 있습니다.",
+    siteName: "DAYFOCUS LAB",
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DAYFOCUS LAB | 클로드코드 강의",
+    description:
+      "스터디카페 사장님을 위한 AI 자동화 강의. 4시간이면 업무를 자동화할 수 있습니다.",
+  },
 };
 
 export default function RootLayout({
