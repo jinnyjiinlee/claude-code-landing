@@ -586,14 +586,14 @@ export default function Home() {
               <div className="mt-2 flex flex-col items-center gap-2">
                 <div className="flex items-center gap-2">
                   <span className="inline-block rounded-full bg-purple px-3 py-1 text-xs font-medium text-white sm:px-4 sm:text-sm">
-                    오프라인 추천
+                    오프라인 강의
                   </span>
                   <span className="inline-block rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white sm:px-4 sm:text-sm">
                     10만원 할인
                   </span>
                 </div>
                 <p className="text-[11px] text-white/40 sm:text-xs">
-                  온라인도 가능 (동일 가격) · 오프라인이 따라오기 쉬워요
+                  실습 위주 강의라 오프라인을 추천합니다
                 </p>
               </div>
               <div className="mt-5 sm:mt-6">
@@ -605,12 +605,12 @@ export default function Home() {
                 </span>
               </div>
               <p className="mt-1.5 text-sm text-white/50 sm:mt-2">
-                4시간 오프라인 집중 강의 + 될 때까지 서포트
+                4시간 오프라인 실습 강의 · 선착순 10명 · 될 때까지 서포트
               </p>
               <ul className="mt-6 space-y-2.5 text-left text-sm text-white/80 sm:mt-8 sm:space-y-3 sm:text-base">
                 {[
                   "VSCode + 클로드코드 세팅 가이드",
-                  "실습 중심 라이브 강의",
+                  "실습 위주 오프라인 라이브 강의 (선착순 10명)",
                   "4시간 후에도 될 때까지 1:1 서포트",
                   "수강생 전용 오픈채팅방 초대",
                   "강의 녹화본 + 자료 PDF 제공",
@@ -764,25 +764,31 @@ export default function Home() {
           alt=""
           className="absolute left-4 bottom-12 h-24 w-24 opacity-[0.05] -rotate-6 sm:left-16 sm:h-40 sm:w-40"
         />
+        <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple/10 blur-[100px]" />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
-            아직도 반복 업무에
-            <br />
-            <span className="gradient-text">시간을 쓰고 계신가요?</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-sm text-white/50 sm:mt-6 sm:text-lg">
-            4시간 투자로 매일 반복되는 업무를 자동화하세요.
-            <br className="hidden sm:block" />
-            남는 시간에 진짜 중요한 일에 집중할 수 있습니다.
-          </p>
-          <a
-            href={KAKAO_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-7 inline-block w-full max-w-xs rounded-full bg-purple px-8 py-3.5 text-base font-semibold text-white transition active:scale-95 sm:mt-10 sm:w-auto sm:px-10 sm:py-4 sm:text-lg sm:hover:scale-105 sm:hover:bg-purple/80 sm:hover:shadow-lg sm:hover:shadow-purple/25"
-          >
-            카카오톡으로 신청하기
-          </a>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md sm:p-14">
+            <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+              아직도 반복 업무에
+              <br />
+              <span className="gradient-text">시간을 쓰고 계신가요?</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-sm text-white/50 sm:mt-6 sm:text-lg">
+              4시간 투자로 매일 반복되는 업무를 자동화하세요.
+              <br className="hidden sm:block" />
+              남는 시간에 진짜 중요한 일에 집중할 수 있습니다.
+            </p>
+            <a
+              href={KAKAO_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shimmer mt-7 inline-block w-full max-w-xs rounded-full bg-purple px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-purple/25 transition active:scale-95 sm:mt-10 sm:w-auto sm:px-10 sm:py-4 sm:text-lg sm:hover:scale-105 sm:hover:bg-purple/80 sm:hover:shadow-xl sm:hover:shadow-purple/30"
+            >
+              카카오톡으로 신청하기
+            </a>
+            <p className="mt-4 text-xs text-white/30 sm:text-sm">
+              선착순 마감 · 소수 정원제로 운영됩니다
+            </p>
+          </div>
         </div>
       </section>
 
@@ -824,7 +830,7 @@ export default function Home() {
           href={KAKAO_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-purple py-3 text-sm font-semibold text-white active:scale-95"
+          className="btn-shimmer flex w-full items-center justify-center gap-2 rounded-full bg-purple py-3 text-sm font-semibold text-white shadow-lg shadow-purple/25 active:scale-95"
         >
           <span>수강 신청하기 (선착순 10명)</span>
           <span className="rounded-full bg-white/20 px-2 py-0.5 text-xs">
