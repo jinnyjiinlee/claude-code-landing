@@ -634,7 +634,7 @@ export default function Home() {
 
               {/* 보증 뱃지 */}
               <p className="mt-4 text-center text-xs text-white/40 sm:mt-5 sm:text-sm">
-                🛡️ 강의 시작 3일 전까지 어떤 이유든 전액 환불
+                🛡️ 강의 시작 7일 전까지 어떤 이유든 전액 환불
               </p>
             </div>
 
@@ -718,7 +718,7 @@ export default function Home() {
               },
               {
                 q: "환불 규정은 어떻게 되나요?",
-                a: "강의 시작 3일 전까지 어떤 이유든 전액 환불 가능합니다.",
+                a: "강의 시작 7일 전까지 어떤 이유든 전액 환불 가능합니다.",
               },
               {
                 q: "4시간 안에 못 따라가면 어떻게 되나요?",
